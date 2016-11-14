@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D5F-Ns-PwS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D5F-Ns-PwS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,28 +37,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendTableViewCell" rowHeight="66" id="FY2-3Z-fSX" customClass="FriendTableViewCell" customModule="MoodTracker_starter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="66"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Friend" rowHeight="66" id="FY2-3Z-fSX" customClass="FriendTableViewCell" customModule="MoodTracker_starter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FY2-3Z-fSX" id="TD3-iM-guv">
-                                    <frame key="frameInset" width="375" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8c-qa-EME">
+                                            <rect key="frame" x="8" y="8" width="63" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get off my lawn!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhZ-su-edY">
+                                            <rect key="frame" x="8" y="40" width="118.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-dc-gC1">
+                                            <rect key="frame" x="326" y="9.5" width="33" height="47"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                             <state key="normal" title="😡"/>
                                             <connections>
-                                                <action selector="moodButtonPressed:" destination="FY2-3Z-fSX" eventType="touchUpInside" id="HxT-LF-g1f"/>
+                                                <action selector="moodButtonPressed:" destination="FY2-3Z-fSX" eventType="touchUpInside" id="1jP-Yv-lHX"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -68,6 +74,11 @@
                                         <constraint firstItem="Fea-dc-gC1" firstAttribute="centerY" secondItem="TD3-iM-guv" secondAttribute="centerY" id="v4c-kE-sUE"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="qhZ-su-edY" id="vzt-OL-16N"/>
+                                    <outlet property="moodButton" destination="Fea-dc-gC1" id="JHB-b2-4zQ"/>
+                                    <outlet property="nameLabel" destination="K8c-qa-EME" id="MyP-hh-K08"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -78,77 +89,81 @@
                     <navigationItem key="navigationItem" id="8nk-hD-nlz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hho-DA-H4I">
                             <connections>
-                                <segue destination="Q2A-tL-vd8" kind="presentation" id="TgB-uy-HuQ"/>
+                                <segue destination="ixw-OS-XgT" kind="show" identifier="toAddFriend" id="kBC-c0-qje"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hj0-JK-yHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991" y="15"/>
+            <point key="canvasLocation" x="894" y="98"/>
         </scene>
-        <!--Add Friend View Controller-->
-        <scene sceneID="u2d-Pt-NUY">
+        <!--Add Friends View Controller-->
+        <scene sceneID="xri-nk-OKK">
             <objects>
-                <viewController id="Q2A-tL-vd8" customClass="AddFriendViewController" customModule="MoodTracker_starter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ixw-OS-XgT" customClass="AddFriendsViewController" customModule="MoodTracker_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gCF-mU-4rv"/>
-                        <viewControllerLayoutGuide type="bottom" id="hkY-Zh-dVz"/>
+                        <viewControllerLayoutGuide type="top" id="HvZ-3K-7gF"/>
+                        <viewControllerLayoutGuide type="bottom" id="JRl-In-Xbs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SS9-Sr-0qt">
+                    <view key="view" contentMode="scaleToFill" id="Kyc-He-WNM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80W-fN-8Tj">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-e7-eaL">
+                                <rect key="frame" x="16" y="94" width="343" height="29"/>
+                                <segments>
+                                    <segment title="😀"/>
+                                    <segment title="😑"/>
+                                    <segment title="😡"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iY7-Uf-epz">
+                                <rect key="frame" x="86" y="162" width="273" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS5-Ir-Knh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-hT-sLp">
+                                <rect key="frame" x="16" y="162" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-mB-rYw">
-                                <segments>
-                                    <segment title="Good 😁"/>
-                                    <segment title="Medium 😑"/>
-                                    <segment title="Bad 😡"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyb-Hv-bSu">
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqc-Gq-L7h">
+                                <rect key="frame" x="132" y="242" width="111" height="30"/>
+                                <state key="normal" title="Save friend"/>
                                 <connections>
-                                    <action selector="cancelButtonPressed:" destination="Q2A-tL-vd8" eventType="touchUpInside" id="NlF-W7-AyH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae3-T8-l3N">
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="Q2A-tL-vd8" eventType="touchUpInside" id="ddt-8t-Di3"/>
+                                    <action selector="saveButtonTapped:" destination="ixw-OS-XgT" eventType="touchUpInside" id="8ws-R4-KKc"/>
+                                    <segue destination="u3h-RT-md2" kind="unwind" unwindAction="unwindToFriendsTableViewWithSegue:" id="DCE-YP-T3n"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jyb-Hv-bSu" firstAttribute="top" secondItem="gCF-mU-4rv" secondAttribute="bottom" id="7ai-ow-dW2"/>
-                            <constraint firstItem="80W-fN-8Tj" firstAttribute="leading" secondItem="NS5-Ir-Knh" secondAttribute="leading" id="CSz-Vu-yDu"/>
-                            <constraint firstItem="3J3-mB-rYw" firstAttribute="leading" secondItem="80W-fN-8Tj" secondAttribute="leading" id="No0-Qo-53e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ae3-T8-l3N" secondAttribute="trailing" constant="6" id="RKR-Ld-Rnh"/>
-                            <constraint firstItem="jyb-Hv-bSu" firstAttribute="leading" secondItem="SS9-Sr-0qt" secondAttribute="leadingMargin" constant="-1" id="SGa-ca-6yU"/>
-                            <constraint firstItem="3J3-mB-rYw" firstAttribute="top" secondItem="80W-fN-8Tj" secondAttribute="bottom" constant="24" id="Vue-ob-2aR"/>
-                            <constraint firstItem="80W-fN-8Tj" firstAttribute="trailing" secondItem="Ae3-T8-l3N" secondAttribute="trailing" id="Xer-ij-Z6Q"/>
-                            <constraint firstItem="NS5-Ir-Knh" firstAttribute="top" secondItem="jyb-Hv-bSu" secondAttribute="bottom" constant="53" id="axF-tR-veb"/>
-                            <constraint firstItem="Ae3-T8-l3N" firstAttribute="top" secondItem="gCF-mU-4rv" secondAttribute="bottom" id="evQ-x8-Oxs"/>
-                            <constraint firstItem="80W-fN-8Tj" firstAttribute="top" secondItem="NS5-Ir-Knh" secondAttribute="bottom" constant="8" id="gYZ-VU-uVd"/>
-                            <constraint firstItem="3J3-mB-rYw" firstAttribute="trailing" secondItem="Ae3-T8-l3N" secondAttribute="trailing" id="oSj-7E-lsG"/>
-                            <constraint firstItem="NS5-Ir-Knh" firstAttribute="leading" secondItem="jyb-Hv-bSu" secondAttribute="leading" id="uBb-Uf-d0B"/>
+                            <constraint firstItem="b8u-e7-eaL" firstAttribute="trailing" secondItem="Kyc-He-WNM" secondAttribute="trailingMargin" id="7Rc-cm-DLc"/>
+                            <constraint firstItem="hqc-Gq-L7h" firstAttribute="top" secondItem="iY7-Uf-epz" secondAttribute="bottom" constant="50" id="98x-rr-iF0"/>
+                            <constraint firstItem="b8u-e7-eaL" firstAttribute="leading" secondItem="Kyc-He-WNM" secondAttribute="leadingMargin" id="AKi-zo-o9U"/>
+                            <constraint firstItem="5cF-hT-sLp" firstAttribute="top" secondItem="b8u-e7-eaL" secondAttribute="bottom" constant="40" id="VHO-8b-2Vm"/>
+                            <constraint firstItem="iY7-Uf-epz" firstAttribute="top" secondItem="b8u-e7-eaL" secondAttribute="bottom" constant="40" id="Vom-9u-k5c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hqc-Gq-L7h" secondAttribute="trailing" constant="116" id="WyY-ni-uOa"/>
+                            <constraint firstItem="5cF-hT-sLp" firstAttribute="leading" secondItem="Kyc-He-WNM" secondAttribute="leadingMargin" id="hob-oN-ITB"/>
+                            <constraint firstItem="iY7-Uf-epz" firstAttribute="leading" secondItem="5cF-hT-sLp" secondAttribute="trailing" constant="20" id="sDI-es-0K4"/>
+                            <constraint firstItem="hqc-Gq-L7h" firstAttribute="leading" secondItem="Kyc-He-WNM" secondAttribute="leadingMargin" constant="116" id="ukO-xY-NHR"/>
+                            <constraint firstItem="b8u-e7-eaL" firstAttribute="top" secondItem="HvZ-3K-7gF" secondAttribute="bottom" constant="30" id="uzu-rJ-Kts"/>
+                            <constraint firstItem="iY7-Uf-epz" firstAttribute="trailing" secondItem="Kyc-He-WNM" secondAttribute="trailingMargin" id="wck-ti-Q4V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="moodSelector" destination="b8u-e7-eaL" id="7ux-vu-dlG"/>
+                        <outlet property="nameTextField" destination="iY7-Uf-epz" id="AAs-Nb-0Cd"/>
+                        <outlet property="saveButton" destination="hqc-Gq-L7h" id="mzE-cl-BAt"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tDx-6x-MVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIV-jU-pCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="u3h-RT-md2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="15"/>
+            <point key="canvasLocation" x="1782" y="98"/>
         </scene>
     </scenes>
 </document>

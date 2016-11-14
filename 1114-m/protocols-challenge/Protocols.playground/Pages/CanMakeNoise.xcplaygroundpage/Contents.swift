@@ -6,23 +6,33 @@ protocol CanMakeNoise {
   func makeNoise()
 }
 
-class Human {
-  
+class Human: CanMakeNoise {
+    func makeNoise() {
+        print("Hello")
+    }
 }
 
-class Pig {
-  
+class Pig: CanMakeNoise {
+    func makeNoise() {
+        print("Oink")
+    }
 }
 
-class Cow {
-  
+class Cow: CanMakeNoise {
+    func makeNoise() {
+        print("Moo")
+    }
 }
 
 let human = Human()
 let pig = Pig()
 let cow = Cow()
 
-// let arrayOfNoiseMaker: [CanMakeNoise] = [human, pig, cow]
+let arrayOfNoiseMaker: [CanMakeNoise] = [human, pig, cow]
+
+for i in arrayOfNoiseMaker{
+    i.makeNoise()
+}
 
 /*:
  **Tasks**:

@@ -24,7 +24,7 @@ class FriendTableViewCell: UITableViewCell {
         }
     }
     
-    var friendsTableViewController: FriendsTableViewController? = nil
+    // var friendsTableViewController: FriendsTableViewController? = nil
 
     weak var delegate: ChangeMoodProtocol?
     // MARK: IBOutlets
